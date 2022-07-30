@@ -1,0 +1,40 @@
+<footer class="pt-4 pb-4 text-center bg-light">
+    <div class="container">
+        <div class="my-3">
+            <div class="h4">{{ about.name }}</div>
+            <p>{{ about.designation }}</p>
+            <div class="social-nav">
+                <nav role="navigation">
+                    <ul class="nav justify-content-center">
+                        {% if about.linkedin %}
+                        <li class="nav-item"><a class="nav-link" target="_blank"
+                                                href="{{ about.linkedin }}" title="LinkedIn"><i
+                                class="fab fa-linkedin"></i><span class="menu-title sr-only">LinkedIn</span></a></li>
+                        {% endif %}
+                        {% if about.github %}
+                        <li class="nav-item"><a class="nav-link" target="_blank"
+                                                href="{{ about.github }}" title="GitHub"><i
+                                class="fab fa-github"></i><span class="menu-title sr-only">GitHub</span></a></li>
+                        {% endif %}
+                        {% if about.leetcode %}
+                        <li class="nav-item"><a class="nav-link" target="_blank"
+                                                href="{{ about.leetcode }}" title="Leetcode"><i class="iconify" data-icon="simple-icons:leetcode"></i><span class="menu-title sr-only">Leetcode</span></a></li>
+                        {% endif %}
+                        {% if about.hackerrank %}
+                        <li class="nav-item"><a class="nav-link" target="_blank"
+                                                href="{{ about.hackerrank }}" title="Hackerrank"><i
+                                class="fab fa-hackerrank"></i><span class="menu-title sr-only">Hackerrank</span></a></li>
+                        {% endif %}
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="text-small text-secondary">
+            <div class="mb-1">&copy; {{ about.name }}. All rights reserved.</div>
+            <div>
+                <!-- Make sure to buy a license for the template before removing the line below. Buy license on https://templateflip.com/ -->
+                Design - <a href="https://templateflip.com/" target="_blank">TemplateFlip</a></div>
+        </div>
+    </div>
+</footer>
