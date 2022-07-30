@@ -1,0 +1,49 @@
+{% load static %}
+<header>
+    <div class="cover bg-light">
+        <div class="container px-3">
+            <div class="row">
+                <div class="col-lg-6 p-2"><img class="img-fluid" src="{% static 'images/illustrations/hello3.svg' %}"
+                                               alt="hello"/></div>
+                <div class="col-lg-6">
+                    <div class="mt-5">
+                        <p class="lead text-uppercase mb-1">Hello!</p>
+                        <h1 class="intro-title marker" data-aos="fade-left" data-aos-delay="50">
+                            I’m {{ about.name }}</h1>
+                        <p class="lead fw-normal mt-3" data-aos="fade-up"
+                           data-aos-delay="100">{{ about.designation }}</p>
+                        <div class="social-nav" data-aos="fade-up" data-aos-delay="200">
+                            <nav role="navigation">
+                                <ul class="nav justify-content-left">
+                                    {% if about.linkedin %}
+                        <li class="nav-item"><a class="nav-link" target="_blank"
+                                                href="{{ about.linkedin }}" title="LinkedIn"><i
+                                class="fab fa-linkedin"></i><span class="menu-title sr-only">LinkedIn</span></a></li>
+                        {% endif %}
+                        {% if about.github %}
+                        <li class="nav-item"><a class="nav-link" target="_blank"
+                                                href="{{ about.github }}" title="GitHub"><i
+                                class="fab fa-github"></i><span class="menu-title sr-only">GitHub</span></a></li>
+                        {% endif %}
+                        {% if about.leetcode %}
+                        <li class="nav-item"><a class="nav-link" target="_blank"
+                                                href="{{ about.leetcode }}" title="Leetcode"><i class="iconify" data-icon="simple-icons:leetcode"></i><span class="menu-title sr-only">Leetcode</span></a></li>
+                        {% endif %}
+                        {% if about.hackerrank %}
+                        <li class="nav-item"><a class="nav-link" target="_blank"
+                                                href="{{ about.hackerrank }}" title="Hackerrank"><i
+                                class="fab fa-hackerrank"></i><span class="menu-title sr-only">Hackerrank</span></a></li>
+                        {% endif %}
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="mt-3" data-aos="fade-up" data-aos-delay="200"><a
+                                class="btn btn-primary shadow-sm mt-1 hover-effect" href="#contact">Get In Touch <i
+                                class="fas fa-arrow-right"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wave-bg"></div>
+</header>

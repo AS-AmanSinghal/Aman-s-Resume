@@ -1,0 +1,46 @@
+{% load static %}
+<div class="section pt-4 px-3 px-lg-4" id="about">
+    <div class="container-narrow">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="h4 my-2">Hello! I’m {{ about.name }}.</h2>
+                <p>{{ about.objective }}</p>
+                <div class="row mt-3">
+                    <div class="col-sm-2">
+                        <div class="pb-1">Age:</div>
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="pb-1 fw-bolder">{{ about.age }}</div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="pb-1">Email:</div>
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="pb-1 fw-bolder">{{ about.email }}</div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="pb-1">Phone:</div>
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="pb-1 fw-bolder">{{ about.mobile }}</div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="pb-1">Address:</div>
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="pb-1 fw-bolder">{{ about.address }}</div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="pb-1">Staus:</div>
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="pb-1 fw-bolder">{{ about.status }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 offset-md-1" data-aos="fade-left" data-aos-delay="100"><img
+                    class="avatar img-fluid mt-2" src="{{ about.image.url }}" width="400" height="400"
+                    alt="{{ about.name }}"/></div>
+        </div>
+    </div>
+</div>
