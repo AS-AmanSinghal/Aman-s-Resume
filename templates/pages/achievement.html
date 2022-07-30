@@ -1,0 +1,61 @@
+{% load static %}
+<div class="section px-3 px-lg-4 pt-5" id="achievement">
+    <div class="container-narrow">
+        <div class="text-center mb-5">
+            <h2 class="marker marker-center">Achievement</h2>
+        </div>
+
+        <!-- Education
+    ----------------------------------------------- -->
+        <div class="row education">
+
+            <div class="three columns header-col">
+                <h1><p>Certificates & <span> Achievemnts</span></p></h1>
+            </div>
+
+            <div class="nine columns main-col">
+
+                <div class="row item">
+                    <div class="twelve columns box-acheive">
+                        <p style="color: #000000;font-weight: bolder;">
+                            {% for achievement in achievements %}
+                                <i class="fas fa-circle"></i> {{ achievement.name }}<br>
+                            {% endfor %}
+                        </p>
+                    </div>
+
+                </div> <!-- item end -->
+
+            </div> <!-- main-col end -->
+        </div>
+
+        <!-- End Education -->
+
+        <!-- Work
+    ----------------------------------------------- -->
+        <div class="row work">
+
+            <div class="three columns header-col">
+                <h1><p>Extra Co-Curricular & Curricular <span>Activities</span></p></h1>
+            </div>
+
+            <div class="nine columns main-col">
+
+                <div class="row item">
+
+                    <div class="twelve columns box-acheive">
+                        <p style="color: #000000;font-weight: bolder;">
+                            {% for extracurricular in extracurriculars %}
+                                <i class="fas fa-circle"></i> {{ extracurricular.name }}<br>
+                            {% endfor %}
+
+                        </p>
+
+                    </div>
+
+                </div> <!-- item end -->
+            </div> <!-- main-col end -->
+
+        </div> <!-- End Work -->
+    </div>
+</div>
