@@ -1,0 +1,22 @@
+image: python:3.8
+
+pipelines:
+  default:
+    - step:
+        name: Build
+        script:
+          - git archive --format=tar.gz main -o resume.tar.gz
+        artifacts:
+          - resume.tar.gz
+      
+    - step:
+        name: Deploy to production
+        deployment: production
+        caches:
+          - pip
+        script:
+          - pipe: atlassian/heroku-deploy:2.0.0
+            variables:
+              HEROKU_API_KEY: $HEROKU_API_KEY
+              HEROKU_APP_NAME: $HEROKU_APP_NAME
+              ZIP_FILE: resume.tar.gz
