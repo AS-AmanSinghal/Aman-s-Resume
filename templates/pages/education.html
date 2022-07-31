@@ -9,16 +9,16 @@
                 <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="100">
                     <div class="experience">
                         <div class="card-inner">
-                            <div class="card-front">
+                            <div class="card-front box-acheive">
                                 <img src="{{ edu.image.url }}" style="width:250px;height:250px;"
                                      alt="{{ edu.image }}">
                             </div>
                             <!-- Decorate card back side -->
-                            <div class="card-back align-items-center">
+                            <div class="card-back align-items-center box-acheive" style="border-color:red">
                                 <h3>{{ edu.school }}</h3>
-                                <h4>{{ edu.course }}</h4>
+                                <h4 style="color:green">{{ edu.course }}</h4>
                                 <p>{{ edu.passing_year }}</p>
-                                <p>{{ edu.score }}</p>
+                                <p style="color:red"><b>{{ edu.score }}</b></p>
                             </div>
                         </div>
                     </div>
