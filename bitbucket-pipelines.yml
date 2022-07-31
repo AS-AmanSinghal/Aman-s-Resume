@@ -3,19 +3,11 @@ image: python:3.8
 pipelines:
   default:
     - step:
-        name: Test
-        script:
-          - cd Resume
-          - pip install -r requirements.txt
-          - ./manage.py test
-          
-    - step:
         name: Build
         script:
-          - cd resume
           - git archive --format=tar.gz main -o resume.tar.gz
         artifacts:
-          - sample-python-app/resume.tar.gz
+          - resume.tar.gz
       
     - step:
         name: Deploy to production
@@ -25,6 +17,6 @@ pipelines:
         script:
           - pipe: atlassian/heroku-deploy:2.0.0
             variables:
-              HEROKU_API_KEY: '1511717a-6a2f-473d-ad23-d36c5aa190a5'
-              HEROKU_APP_NAME: 'aman-resume-1'
-              ZIP_FILE: resume/resume.tar.gz
+              HEROKU_API_KEY: $HEROKU_API_KEY
+              HEROKU_APP_NAME: $HEROKU_APP_NAME
+              ZIP_FILE: resume.tar.gz
