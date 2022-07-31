@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'experience',
     'achievement',
     'contact',
+    'portfolio',
 ]
 
 MIDDLEWARE = [
