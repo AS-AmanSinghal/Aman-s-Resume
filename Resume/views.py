@@ -1,9 +1,10 @@
 from django.shortcuts import render
 
 from about.models import About
+from achievement.models import Achievement, ExtraCurricular
 from education.models import Education
 from experience.models import Experience
-from achievement.models import Achievement, ExtraCurricular
+from portfolio.models import Portfolio
 from skills.models import Skills
 
 
@@ -14,6 +15,7 @@ def home(request):
     experience = Experience.objects.all().order_by('-id')
     achievements = Achievement.objects.all().order_by('-id')
     extracurriculars = ExtraCurricular.objects.all().order_by('-id')
+    portfolio = Portfolio.objects.all().order_by('-id')
 
     context = {
         'education': education,
@@ -21,7 +23,8 @@ def home(request):
         'experiences': experience,
         'achievements': achievements,
         'extracurriculars': extracurriculars,
-        'about': abouts
+        'about': abouts,
+        'portfolios': portfolio
     }
 
     return render(request, 'index.html', context)
